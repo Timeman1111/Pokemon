@@ -23,6 +23,10 @@ public class Colors {
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
 
+    // Define string bolds, italics, etc
+
+    public static final String ANSI_BOLD = "\u001b[1m";
+
     // Return the string with the formatted color
     public static String formatText(String x, String color){
 
@@ -33,5 +37,10 @@ public class Colors {
     public static String formatText(String x, String color, String backgroundColor){
 
         return backgroundColor + color + x + ANSI_RESET;
+    }
+
+    public static String boldText(String x){
+
+        return ANSI_BOLD + x + ANSI_RESET;
     }
 }
