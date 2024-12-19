@@ -14,7 +14,7 @@ public class Pokémon {
         defense = def;
         specialAttack =spatk;
         specialDefense = spdef;
-        speedStat = spd;
+        speed = spd;
 
 
     }
