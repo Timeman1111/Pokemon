@@ -24,19 +24,21 @@ public class Pokemon {
 
 //makes new pokemon
     public void birth(int lvl, int hp, int atk, int def, int spatk, int spdef, int spd, String type1, String type2){
-        //sets all the stats
-        maxHealth = hp;
-        currentHealth = hp;
-        attack = atk;
-        defense = def;
-        specialAttack =spatk;
-        specialDefense = spdef;
-        speed = spd;
+        //sets all the base stats
+        level = lvl;
+        //converts the base stats to actual stats
+        maxHealth = 2*hp*lvl/100+lvl+10;
+        currentHealth = maxHealth;
+        attack = 2*atk*lvl/100;
+        defense = 2*def*lvl/100;
+        specialAttack = 2*spatk*lvl/100;
+        specialDefense = 2*spdef*lvl/100;
+        speed = 2*spd*lvl/100;
         typing1 = type1;
         typing2 = type2;
     }
 
-
+    //getters
     public int getAttack(){
         // gets the attack stat of a pokeomn
         if(atkBoost > 6)
@@ -93,6 +95,12 @@ public class Pokemon {
         //returns the 2nd type of the pokemon
         return typing2;
     }
+
+    //makes all the setters
+
+  
+
+
 
 
 
