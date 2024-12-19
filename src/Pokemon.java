@@ -19,8 +19,8 @@ public class Pokemon {
     private int evaBoost;
 
 
-
-    public birth(int hp, int atk, int def, int spatk, int spdef, int spd, String type1, String type2){
+//makes new pokemon
+    public void birth(int hp, int atk, int def, int spatk, int spdef, int spd, String type1, String type2){
         //sets all the stats
         health = hp;
         attack = atk;
@@ -32,7 +32,7 @@ public class Pokemon {
         typing2 = type2;
     }
 
-    public int get
+    //public int get
 
 
 
