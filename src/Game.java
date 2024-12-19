@@ -1,6 +1,18 @@
 public class Game {
 
 
+
+    private Player player;
+
+    public Game(Pokemon pokemon){
+
+    }
+
+    public Game(){
+
+        assignPokemon();
+    }
+
     // Clears terminal screen (DOES NOT WORK IN INTELLIJ)
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
@@ -29,6 +41,17 @@ public class Game {
         line = "\nBy: Ethan Small & " + Colors.rainbowColor("Eden Chung");
         System.out.println(line);
 
-        delay(1000);
+
+    }
+
+    public void assignPokemon(){
+        clearScreen();
+
+        String line = "Now you need a pokemon!";
+        line = Colors.formatText(line, Colors.RED);
+        System.out.println(line);
+
+
+
     }
 }
