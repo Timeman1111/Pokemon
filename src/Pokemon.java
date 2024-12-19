@@ -98,7 +98,7 @@ public class Pokemon {
 
     //makes all the setters
 
-  
+
 
 
 
