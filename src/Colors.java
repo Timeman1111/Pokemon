@@ -63,7 +63,7 @@ public class Colors {
     // Choose a random color
     private static String randomColor(){
 
-        int choice = (int) (6*Math.random() + 1);
+        int choice = (int) (6*Math.random() + 2);
 
         return switch (choice) {
             case 1 -> Colors.RED;
