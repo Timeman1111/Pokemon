@@ -26,7 +26,7 @@ public class Game {
 
         delay(2000);
 
-        line = "\nBy: Ethan Small & Eden Chung";
+        line = "\nBy: Ethan Small & " + Colors.rainbowColor("Eden Chung");
         System.out.println(line);
 
         delay(1000);
