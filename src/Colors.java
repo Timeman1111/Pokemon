@@ -13,19 +13,20 @@ public class Colors {
     public static final String ANSI_RESET = "\u001B[0m";
 
     // Define background colors
-    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
-    public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
-    public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
-    public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
-    public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
-    public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
-    public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
-    public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+    public static final String BLACK_BACKGROUND = "\u001B[40m";
+    public static final String RED_BACKGROUND = "\u001B[41m";
+    public static final String GREEN_BACKGROUND = "\u001B[42m";
+    public static final String YELLOW_BACKGROUND = "\u001B[43m";
+    public static final String BLUE_BACKGROUND = "\u001B[44m";
+    public static final String PURPLE_BACKGROUND = "\u001B[45m";
+    public static final String CYAN_BACKGROUND = "\u001B[46m";
+    public static final String WHITE_BACKGROUND = "\u001B[47m";
 
 
     // Define string bolds, italics, etc
 
-    public static final String ANSI_BOLD = "\u001b[1m";
+    public static final String BOLD = "\u001b[1m";
+    public static final String ITAlICIZE = "\u001b[3m";
 
     // Return the string with the formatted color
     public static String formatText(String x, String color){
@@ -41,6 +42,16 @@ public class Colors {
 
     public static String boldText(String x){
 
-        return ANSI_BOLD + x + ANSI_RESET;
+        return BOLD + x + ANSI_RESET;
+    }
+
+    public static String italicize(String x){
+
+        return ITAlICIZE + x + ANSI_RESET;
+    }
+
+    public static String underline(String x){
+
+        return ITAlICIZE + x + ANSI_RESET;
     }
 }
