@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Colors {
 
     // Define colors
@@ -53,5 +57,40 @@ public class Colors {
     public static String underline(String x){
 
         return ITAlICIZE + x + ANSI_RESET;
+    }
+
+
+    // Choose a random color
+    private static String randomColor(){
+
+        int choice = (int) (6*Math.random() + 1);
+
+        return switch (choice) {
+            case 1 -> Colors.RED;
+            case 2 -> Colors.GREEN;
+            case 3 -> Colors.YELLOW;
+            case 4 -> Colors.BLUE;
+            case 5 -> Colors.PURPLE;
+            case 6 -> Colors.CYAN;
+            default ->
+                // THIS SHOULD NEVER RUN BTW
+                Colors.RED;
+        };
+
+    }
+
+    public static String rainbowColor(String s){
+        StringBuilder result = new StringBuilder();
+
+        // Iterate through each character of the string
+        for (int i = 0; i < s.length(); i++) {
+            char currentChar = s.charAt(i);
+            result.append(randomColor());
+            result.append(currentChar);
+
+        }
+        result.append(ANSI_RESET);
+        // Convert the StringBuilder back to a string and return
+        return result.toString();
     }
 }
