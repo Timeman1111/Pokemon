@@ -1,4 +1,4 @@
-public class POkemon {
+public class Pokémon {
     private int health;
     private int attack;
     private int defense;
