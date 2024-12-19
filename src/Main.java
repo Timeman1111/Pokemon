@@ -3,6 +3,7 @@ public class Main {
         System.out.println("Hello World");
 
         String result = Colors.formatText("HELLO", Colors.BLUE);
+        Game.printDamage(5);
         System.out.println(result);
     }
 }
