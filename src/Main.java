@@ -2,9 +2,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World");
 
-
-        if (true){
-          System.out.println("hehehehehehehehehe");
-        }
+        String result = Colors.formatText("HELLO", Colors.BLUE);
+        System.out.println(result);
     }
 }
