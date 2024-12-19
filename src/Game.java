@@ -20,15 +20,8 @@ public class Game {
     // Writes out the intro
     public static void playIntro(){
         clearScreen();
-        String line = "Hello there!";
-        line = Colors.RED + line + Colors.ANSI_RESET;
 
-        System.out.println(line);
-
-        delay(2000);
-
-
-        line = "Welcome to our Pokemon " + Colors.formatText("(unofficial)", Colors.RED) + " Battle Simulator!";
+        String line = "Welcome to our Pokemon " + Colors.formatText("(unofficial)", Colors.RED) + " Battle Simulator!";
         System.out.println(line);
 
         delay(2000);
