@@ -6,6 +6,9 @@ public class Main {
 
         Game game = new Game();
 
+        // TESTING BATTLE
+        Battle battle = new Battle();
+        battle.start();
 
     }
 }
