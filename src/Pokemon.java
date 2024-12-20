@@ -43,6 +43,15 @@ public class Pokemon {
     }
 
     //getters
+    public int getMaxHealth(){
+        return maxHealth;
+    }
+    public int getCurrentHealth(){
+        return currentHealth;
+    }
+    public int getLevel(){
+        return level;
+    }
     public int getAttack() {
 
         // gets the attack stat of a pokemon
@@ -109,7 +118,7 @@ public class Pokemon {
         }
         return (int) (speed / (1 + boost[4] * 0.5));
     }
-            public int getAccBoost(){
+    public int getAccBoost(){
         //returns the accuracy modifier
         if (boost[5] > 6)
             boost[5] = 6;
@@ -131,20 +140,17 @@ public class Pokemon {
         //returns the 1st type of the pokemon
         return typing1;
     }
-    public String getTyping2(){
+    public String getTyping2() {
         //returns the 2nd type of the pokemon
         return typing2;
     }
 
     //0 is attack 1 is defense 2 is special attack 3 is special defense 4 is speed 5 is accuracy 6 is evasion
-    public void statBoost(int stages, int stat){
+    public void statBoost(int stages, int stat) {
         boost[stat] += stages;
     }
-
-
-
-
-
-
-
+    //sets the current health
+    public void setCurrentHealth(int newHealth) {
+        currentHealth = newHealth;
+    }
 }
