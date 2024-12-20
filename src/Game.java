@@ -41,6 +41,7 @@ public class Game {
         line = "\nBy: Ethan Small & " + Colors.rainbowColor("Eden Chung");
         System.out.println(line);
 
+        delay(5000);
 
     }
 
