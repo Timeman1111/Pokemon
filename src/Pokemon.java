@@ -10,9 +10,8 @@ public class Pokemon {
     private int speed;
     private String typing1;
     private String typing2;
-    //stat boosts up to 6
-
-    private int[] = 
+    //stat boosts up to
+    private double[] boost = new double [7];
 
     /*private int atkBoost;
     private int defBoost;
@@ -27,7 +26,7 @@ public class Pokemon {
 
 
 //makes new pokemon
-    public Pokemon birth(int lvl, int hp, int atk, int def, int spatk, int spdef, int spd, String type1, String type2){
+    public Pokemon (int lvl, int hp, int atk, int def, int spatk, int spdef, int spd, String type1, String type2){
         //sets all the base stats
         level = lvl;
         //converts the base stats to actual stats
@@ -38,57 +37,94 @@ public class Pokemon {
         specialAttack = 2*spatk*lvl/100;
         specialDefense = 2*spdef*lvl/100;
         speed = 2*spd*lvl/100;
+        //sets the types
         typing1 = type1;
         typing2 = type2;
     }
 
     //getters
-    public int getAttack(){
-        // gets the attack stat of a pokeomn
-        if(atkBoost > 6)
-            atkBoost = 6;
-        return attack * atkBoost;
-    }
+    public int getAttack() {
 
-    public int getDefense(){
-        //gets defense of a pokemon
-        if (defBoost > 6)
-            defBoost = 6;
-        return defense * defBoost;
+        // gets the attack stat of a pokemon
+        if (boost[0] >= 0) {
+            if (boost[0] > 6) {
+                boost[0] = 6;
+            }
+            return (int) (attack * (1 + boost[0] * 0.5));
+        }
+        if (boost[0] < -6) {
+            boost[0] = -6;
+        }
+        return (int) (attack / (1 + boost[0] * 0.5));
     }
-
-    public int getSpecialAttack(){
-        //gets special attack of a pokemon
-        if (spatkBoost > 6)
-            spatkBoost = 6;
-        return specialAttack * spatkBoost;
+    public int getDefense() {
+        // gets the defense stat of a pokemon
+        if (boost[1] >= 0) {
+            if (boost[1] > 6) {
+                boost[1] = 6;
+            }
+            return (int) (defense * (1 + boost[1] * 0.5));
+        }
+        if (boost[1] < -6) {
+            boost[0] = -6;
+        }
+        return (int) (defense / (1 + boost[1] * 0.5));
     }
-
-    public int getSpecialDefense(){
-        //gets the special defnse of a pokemon
-        if (spdefBoost > 6)
-            spdefBoost = 6;
-        return specialDefense * spdefBoost;
+    public int getSpecialAttack() {
+        // gets the special attack stat of a pokemon
+        if (boost[2] >= 0) {
+            if (boost[2] > 6) {
+                boost[2] = 6;
+            }
+            return (int) (specialAttack * (1 + boost[2] * 0.5));
+        }
+        if (boost[2] < -6) {
+            boost[2] = -6;
+        }
+        return (int) (specialAttack / (1 + boost[2] * 0.5));
     }
-    public int getSpeed(){
-        //gets the speed of a pokemon
-        if (speedBoost > 6)
-            speedBoost = 6;
-        return speed * speedBoost;
+    public int getSpecialDefense() {
+        // gets the Specail defense stat of a pokemon
+        if (boost[3] >= 0) {
+            if (boost[3] > 6) {
+                boost[3] = 6;
+            }
+            return (int) (specialDefense * (1 + boost[3] * 0.5));
+        }
+        if (boost[3] < -6) {
+            boost[3] = -6;
+        }
+        return (int) (specialDefense / (1 + boost[3] * 0.5));
     }
-
-    public int getAccBoost(){
+    public int getSpeed() {
+        // gets the speed stat of a pokemon
+        if (boost[4] >= 0) {
+            if (boost[4] > 6) {
+                boost[4] = 6;
+            }
+            return (int) (speed * (1 + boost[4] * 0.5));
+        }
+        if (boost[4] < -6) {
+            boost[4] = -6;
+        }
+        return (int) (speed / (1 + boost[4] * 0.5));
+    }
+            public int getAccBoost(){
         //returns the accuracy modifier
-        if (accBoost > 6)
-            accBoost = 6;
-        return accBoost;
+        if (boost[5] > 6)
+            boost[5] = 6;
+        else if (boost[5] < -6)
+            boost[5] = -6;
+        return (int) boost[5];
     }
 
     public int getEvaBoost(){
         //returns the evasion modifier
-        if (evaBoost > 6)
-            evaBoost = 6;
-        return evaBoost;
+        if (boost[6] > 6)
+            boost[6] = 6;
+        else if (boost[6] < -6)
+            boost[6] = -6;
+        return (int) boost[6];
     }
 
     public String getTyping1(){
@@ -100,9 +136,9 @@ public class Pokemon {
         return typing2;
     }
 
-    //makes all the setters
-    public void statBoost(int boost, int stat){
-
+    //0 is attack 1 is defense 2 is special attack 3 is special defense 4 is speed 5 is accuracy 6 is evasion
+    public void statBoost(int stages, int stat){
+        boost[stat] += stages;
     }
 
 
