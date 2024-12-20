@@ -37,6 +37,14 @@ public class Battle {
     }
 
 
+    public void printHP(){
+        System.out.println("[ENEMY ]: 100");
+        System.out.println("[PLAYER]: 100");
+    }
+
+    public void spacer(){
+        System.out.println(" ");
+    }
     public void printOptions(){
         System.out.println("Pick an option");
         System.out.println("[1] Fight");
@@ -49,6 +57,8 @@ public class Battle {
 
         Scanner keyboard = new Scanner(System.in);
         while (true){
+            printHP();
+            spacer();
             printOptions();
             int playerInput = keyboard.nextInt();
 
@@ -67,6 +77,8 @@ public class Battle {
                 System.out.println("OOH PUSSY");
                 break;
             }
+
+            spacer();
 
 
 
