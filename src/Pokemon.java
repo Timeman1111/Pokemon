@@ -11,19 +11,23 @@ public class Pokemon {
     private String typing1;
     private String typing2;
     //stat boosts up to 6
-    private int atkBoost;
+
+    private int[] = 
+
+    /*private int atkBoost;
     private int defBoost;
     private int spatkBoost;
     private int spdefBoost;
     private int speedBoost;
     private int accBoost;
-    private int evaBoost;
+    private int evaBoost;*/
+
     // default no gender 1 is female 2 is male
     private int gender;
 
 
 //makes new pokemon
-    public void birth(int lvl, int hp, int atk, int def, int spatk, int spdef, int spd, String type1, String type2){
+    public Pokemon birth(int lvl, int hp, int atk, int def, int spatk, int spdef, int spd, String type1, String type2){
         //sets all the base stats
         level = lvl;
         //converts the base stats to actual stats
@@ -97,6 +101,9 @@ public class Pokemon {
     }
 
     //makes all the setters
+    public void statBoost(int boost, int stat){
+
+    }
 
 
 
